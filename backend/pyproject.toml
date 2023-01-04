@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "x_x"
+authors = ["Тимофей Городилов <timotheos94@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.2.0"
+flake8 = "^6.0.0"
+mypy = "^0.991"
+django = "4.1"
+psycopg2-binary = "^2.9.5"
+python-dotenv = "^0.21.0"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
