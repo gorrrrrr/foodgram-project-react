@@ -13,6 +13,8 @@ mypy = "^0.991"
 django = "4.1"
 psycopg2-binary = "^2.9.5"
 python-dotenv = "^0.21.0"
+psycopg2 = "^2.9.5"
+isort = "^5.11.4"
 
 
 
