@@ -16,11 +16,12 @@ PASSWORD_REGEXES = (
     (r'.*?[a-z].*?', 'В пароле должна быть хотя бы одна строчная буква.'),
     (r'.*?[#?!@$%^&*-].*?', 'В пароле должен быть хотя бы один спецсимвол.'),
 )
+NAME_REGEX = r'^[a-zA-Zа-яА-Я-]+$'
 
 
 def validate_username(username):
     if not re.fullmatch(USERNAME_REGEX, username):
-        raise ValidationError('В Username неподходящие символы.')
+        raise ValidationError('В username неподходящие символы.')
     if username in settings.USERNAME_BLACKLIST:
         raise ValidationError(
             'Этот username выбрать нельзя, попробуйте другой.'
@@ -36,3 +37,8 @@ def validate_password(password):
     for regex, msg in PASSWORD_REGEXES:
         if not re.fullmatch(regex, password):
             raise ValidationError(msg)
+
+
+def validate_name(name):
+    if not re.fullmatch(NAME_REGEX, name):
+        raise ValidationError('Имя должно быть одним словом.')
